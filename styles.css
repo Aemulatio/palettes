@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    all: unset;
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+    background: #4e4e4e;
+    display: grid;
+    place-content: center;
+}
+
+#grid{
+  display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+}
+
+.card{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+
+    transition: scale .350s ease;
+}
+
+.active{
+    background-color: color-mix(in srgb-linear, lightblue, yellow);
+}
+
+
+/*.card:hover{*/
+/*    !*scale: 1.1*!*/
+/*    scale: -1 1;*/
+/*}*/
