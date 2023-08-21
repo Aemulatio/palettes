@@ -59,3 +59,10 @@ document
 document
   .querySelector(".side-panel__submit")
   .addEventListener("click", acceptConfig);
+
+/////////
+
+document.querySelector("#configVisibility").addEventListener("click", function (){
+  document.querySelector(".side-panel").classList.toggle("hidden")
+  this.classList.toggle("hided")
+})
