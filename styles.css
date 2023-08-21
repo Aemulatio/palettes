@@ -29,16 +29,15 @@ body {
     transition: scale .350s ease;
 }
 
-.active {
+.active-x {
     background-color: color-mix(in srgb-linear, lightblue, yellow);
     scale: -1 1;
 }
+.active-y {
+    background-color: color-mix(in srgb-linear, lightblue, yellow);
+    scale: 1 -1;
+}
 
-
-/*.card:hover{*/
-/*    !*scale: 1.1*!*/
-/*    scale: -1 1;*/
-/*}*/
 
 .side-panel {
     position: fixed;
