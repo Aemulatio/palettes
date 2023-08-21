@@ -36,14 +36,18 @@ const acceptConfig = (e) => {
         (inSide === "left" && outSide === "right") ||
         (outSide === "left" && inSide === "right")
       ) {
-        this.classList.toggle("active");
+        if (this.classList.contains("active-y"))
+          this.classList.remove("active-y");
+        else this.classList.toggle("active-x");
       }
 
       if (
         (inSide === "top" && outSide === "bottom") ||
         (outSide === "top" && inSide === "bottom")
       ) {
-        this.classList.toggle("active");
+        if (this.classList.contains("active-x"))
+          this.classList.remove("active-y");
+        else this.classList.toggle("active-y");
       }
     });
   });
