@@ -30,6 +30,7 @@ body {
 
 .active{
     background-color: color-mix(in srgb-linear, lightblue, yellow);
+    scale: -1 1;
 }
 
 
