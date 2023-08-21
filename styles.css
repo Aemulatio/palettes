@@ -1,4 +1,4 @@
-* {
+*, *:before, *:after {
     box-sizing: border-box;
 }
 
@@ -33,6 +33,7 @@ body {
     background-color: color-mix(in srgb-linear, lightblue, yellow);
     scale: -1 1;
 }
+
 .active-y {
     background-color: color-mix(in srgb-linear, lightblue, yellow);
     scale: 1 -1;
@@ -41,10 +42,11 @@ body {
 
 .side-panel {
     position: fixed;
-    padding: 30px 10px;
-    height: 100%;
+    padding: 30px 30px;
     background-color: color-mix(in oklab, white, black);
     max-width: 30vw;
+    top: 2vh;
+    left: 2vw;
 }
 
 .side-panel__form {
@@ -75,11 +77,38 @@ body {
     background-color .35s ease;
 }
 
-.side-panel__submit:active {
+.side-panel__submit:active, .side-panel__submit:focus {
     background-color: color-mix(in oklab, color-mix(in oklab, white, #626263FF), white);
 }
 
 .side-panel__submit:hover {
     background-color: color-mix(in oklab, color-mix(in oklab, white, #626263FF), black);
     color: wheat;
+}
+
+#configVisibility {
+    position: fixed;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: .7em;
+    border: none;
+    outline: none;
+    transition: rotate .35s ease;
+    top: 2vh;
+    left: 2vw;
+}
+
+.hided {
+    rotate: 135deg;
+}
+
+.hidden {
+    height: 0;
+    padding: 0;
+}
+
+.hidden > form {
+    display: none;
 }
