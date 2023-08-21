@@ -7,28 +7,51 @@ const getDirectionKey = (ev, node) => {
   const y = t - (height / 2) * (height > width ? width / height : 1);
   return Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
 };
+const acceptConfig = (e) => {
+  e.preventDefault();
+  const size = document.querySelector("#size").value,
+    amount = Number(document.querySelector("#amount").value),
+    container = document.querySelector("#grid");
 
-document.querySelectorAll(".card").forEach((card) => {
-  let inSide, outSide;
-
-  card.addEventListener("mouseover", function (e) {
-    inSide = directions[getDirectionKey(e, this)];
+  container.replaceChildren();
+  new Array(amount).fill(1).forEach((_) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    container.appendChild(card);
   });
-  card.addEventListener("mouseout", function (e) {
-    outSide = directions[getDirectionKey(e, this)];
 
-    if (
-      (inSide === "left" && outSide === "right") ||
-      (outSide === "left" && inSide === "right")
-    ) {
-      this.classList.toggle("active");
-    }
+  document.querySelectorAll(".card").forEach((card) => {
+    card.style.width = `${size}px`;
+    card.style.height = `${size}px`;
 
-    if (
-      (inSide === "top" && outSide === "bottom") ||
-      (outSide === "top" && inSide === "bottom")
-    ) {
-      this.classList.toggle("active");
-    }
+    let inSide, outSide;
+
+    card.addEventListener("mouseover", function (e) {
+      inSide = directions[getDirectionKey(e, this)];
+    });
+    card.addEventListener("mouseout", function (e) {
+      outSide = directions[getDirectionKey(e, this)];
+
+      if (
+        (inSide === "left" && outSide === "right") ||
+        (outSide === "left" && inSide === "right")
+      ) {
+        this.classList.toggle("active");
+      }
+
+      if (
+        (inSide === "top" && outSide === "bottom") ||
+        (outSide === "top" && inSide === "bottom")
+      ) {
+        this.classList.toggle("active");
+      }
+    });
   });
-});
+};
+
+document
+  .querySelector(".side-panel__form")
+  .addEventListener("onsubmit", acceptConfig);
+document
+  .querySelector(".side-panel__submit")
+  .addEventListener("click", acceptConfig);
