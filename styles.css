@@ -4,6 +4,7 @@
 
 body {
     all: unset;
+    position: relative;
 }
 
 #main {
@@ -14,13 +15,13 @@ body {
     place-content: center;
 }
 
-#grid{
-  display: grid;
+#grid {
+    display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1px;
 }
 
-.card{
+.card {
     width: 100px;
     height: 100px;
     background-color: lightblue;
@@ -28,7 +29,7 @@ body {
     transition: scale .350s ease;
 }
 
-.active{
+.active {
     background-color: color-mix(in srgb-linear, lightblue, yellow);
     scale: -1 1;
 }
@@ -38,3 +39,48 @@ body {
 /*    !*scale: 1.1*!*/
 /*    scale: -1 1;*/
 /*}*/
+
+.side-panel {
+    position: fixed;
+    padding: 30px 10px;
+    height: 100%;
+    background-color: color-mix(in oklab, white, black);
+    max-width: 30vw;
+}
+
+.side-panel__form {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+}
+
+.side-panel__label {
+    font-family: monospace;
+    display: flex;
+    flex-flow: column;
+    font-size: 22px;
+    gap: 10px;
+    line-height: 1.3em;
+}
+
+.side-panel__input {
+    font-family: monospace;
+    line-height: 1.5em;
+    font-size: 20px;
+
+    border: none;
+    outline: 1px lightblue;
+    background-color: color-mix(in oklab, white, #626263FF);
+    cursor: pointer;
+    transition: color .35s ease,
+    background-color .35s ease;
+}
+
+.side-panel__submit:active {
+    background-color: color-mix(in oklab, color-mix(in oklab, white, #626263FF), white);
+}
+
+.side-panel__submit:hover {
+    background-color: color-mix(in oklab, color-mix(in oklab, white, #626263FF), black);
+    color: wheat;
+}
