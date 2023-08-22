@@ -13,9 +13,11 @@ body {
 #main {
     width: 100vw;
     height: 100vh;
+    max-height: 100vh;
     background: #4e4e4e;
     display: grid;
     place-content: center;
+    padding: 3vh;
 }
 
 #grid {
