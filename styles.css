@@ -45,6 +45,7 @@ body {
     padding: 30px 30px;
     background-color: color-mix(in oklab, white, black);
     max-width: 30vw;
+    min-width: 230px;
     top: 2vh;
     left: 2vw;
 }
