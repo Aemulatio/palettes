@@ -1,5 +1,8 @@
+@import url("./fonts/fonts.css");
+
 *, *:before, *:after {
     box-sizing: border-box;
+    font-family: "Roboto mono", monospace;
 }
 
 body {
@@ -48,7 +51,6 @@ body {
     min-width: 230px;
     top: 2vh;
     left: 2vw;
-
     border-top-left-radius: 10px;
 }
 
@@ -59,7 +61,6 @@ body {
 }
 
 .side-panel__label {
-    font-family: monospace;
     display: flex;
     flex-flow: column;
     font-size: 22px;
@@ -68,7 +69,6 @@ body {
 }
 
 .side-panel__input {
-    font-family: monospace;
     line-height: 1.5em;
     font-size: 20px;
 
@@ -76,6 +76,9 @@ body {
     outline: 1px lightblue;
     background-color: color-mix(in oklab, white, #626263FF);
     cursor: pointer;
+}
+
+.side-panel__submit {
     transition: color .35s ease,
     background-color .35s ease;
 }
