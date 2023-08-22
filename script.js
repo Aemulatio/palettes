@@ -46,7 +46,7 @@ const acceptConfig = (e) => {
         (outSide === "top" && inSide === "bottom")
       ) {
         if (this.classList.contains("active-x"))
-          this.classList.remove("active-y");
+          this.classList.remove("active-x");
         else this.classList.toggle("active-y");
       }
     });
