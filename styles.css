@@ -34,13 +34,15 @@ body {
     transition: scale .350s ease;
 }
 
-.active-x {
+.card:is(.active-x, .active-y){
     background-color: color-mix(in srgb-linear, lightblue, yellow);
+}
+
+.active-x {
     scale: -1 1;
 }
 
 .active-y {
-    background-color: color-mix(in srgb-linear, lightblue, yellow);
     scale: 1 -1;
 }
 
