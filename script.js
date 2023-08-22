@@ -68,5 +68,8 @@ document
 
 document.querySelector("#configVisibility").addEventListener("click", function () {
     document.querySelector(".side-panel").classList.toggle("hidden")
-    this.classList.toggle("hided")
+    if (this.getAttribute("aria-expanded") === "false")
+        this.setAttribute("aria-expanded", "true");
+    else
+        this.setAttribute("aria-expanded", "false");
 })

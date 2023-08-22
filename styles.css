@@ -46,6 +46,7 @@ body {
 
 
 .side-panel {
+    display: grid;
     position: fixed;
     padding: 30px 30px;
     background-color: color-mix(in oklab, white, black);
@@ -54,6 +55,9 @@ body {
     top: 2vh;
     left: 2vw;
     border-top-left-radius: 10px;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows .3s ease-out,
+    padding .3s ease;
 }
 
 .side-panel__form {
@@ -108,15 +112,15 @@ body {
     left: 2vw;
 }
 
-.hided {
+#configVisibility[aria-expanded="false"] {
     rotate: 135deg;
 }
 
 .hidden {
-    height: 0;
+    grid-template-rows: 0fr;
     padding: 0;
 }
 
 .hidden > form {
-    display: none;
+    overflow: hidden;
 }
