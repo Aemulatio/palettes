@@ -158,7 +158,7 @@ body {
     display: none;
 }
 
-.side-panel__info[data-show]{
+.side-panel__info[data-show] {
     display: block;
 }
 
@@ -168,11 +168,32 @@ body {
     background-color: #e6e6e6;
 }
 
+.side-panel__info h4:not(:first-of-type){
+    margin-top: 10px;
+}
+
 .side-panel__article {
     text-align: left;
     font-size: 16px;
     padding-left: 10px;
 }
-.side-panel__article img{
+
+.side-panel__article p {
+    margin: 0;
+}
+
+.side-panel__article img {
     width: 100px;
+}
+
+.side-panel__article:nth-of-type(2) {
+    counter-set: moves;
+}
+
+.side-panel__article:nth-of-type(2) p {
+    counter-increment: moves;
+}
+
+.side-panel__article:nth-of-type(2) p:before {
+    content: counter(moves) ". ";
 }
