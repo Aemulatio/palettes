@@ -34,7 +34,7 @@ body {
     transition: scale .350s ease;
 }
 
-.card:is(.active-x, .active-y){
+.card:is(.active-x, .active-y) {
     background-color: color-mix(in srgb-linear, lightblue, yellow);
 }
 
@@ -50,7 +50,6 @@ body {
 .side-panel {
     display: grid;
     position: fixed;
-    padding: 30px 30px;
     background-color: color-mix(in oklab, white, black);
     max-width: 30vw;
     min-width: 230px;
@@ -58,14 +57,15 @@ body {
     left: 2vw;
     border-top-left-radius: 10px;
     grid-template-rows: 1fr;
-    transition: grid-template-rows .3s ease-out,
-    padding .3s ease;
+    transition: grid-template-rows .3s ease;
 }
 
 .side-panel__form {
     display: flex;
     flex-flow: column;
     gap: 30px;
+    transition: margin .4s;
+    margin: 30px;
 }
 
 .side-panel__label {
@@ -120,9 +120,9 @@ body {
 
 .hidden {
     grid-template-rows: 0fr;
-    padding: 0;
 }
 
 .hidden > form {
     overflow: hidden;
+    margin: 0;
 }
