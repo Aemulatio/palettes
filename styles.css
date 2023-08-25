@@ -126,3 +126,53 @@ body {
     overflow: hidden;
     margin: 0;
 }
+
+.hidden > #info {
+    display: none;
+}
+
+/**/
+
+#info {
+    place-self: end;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 100%;
+    font-size: 20px;
+    text-align: center;
+    line-height: .7em;
+    background-color: black;
+}
+
+#info > svg {
+    color: buttonface;
+}
+
+
+.side-panel__info {
+    padding: 10px;
+    font-size: 20px;
+    line-height: 1.4;
+    background-color: whitesmoke;
+    max-width: 300px;
+    display: none;
+}
+
+.side-panel__info[data-show]{
+    display: block;
+}
+
+.side-panel__info h4 {
+    margin: 0;
+    padding: 2px 2px 2px 5px;
+    background-color: #e6e6e6;
+}
+
+.side-panel__article {
+    text-align: left;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.side-panel__article img{
+    width: 100px;
+}

@@ -73,3 +73,56 @@ document.querySelector("#configVisibility").addEventListener("click", function (
     else
         this.setAttribute("aria-expanded", "false");
 })
+
+//popper
+
+const infoRef = document.querySelector("#info"),
+    infoContent = document.querySelector(".side-panel__info")
+
+const popperInstance = Popper.createPopper(infoRef, infoContent, {
+    modifiers: [
+        {
+            name: 'offset',
+            options: {
+                offset: [0, 5],
+            },
+        },
+    ],
+});
+
+function show() {
+    infoContent.setAttribute('data-show', '');
+
+    popperInstance.setOptions((options) => ({
+        ...options,
+        modifiers: [
+            ...options.modifiers,
+            { name: 'eventListeners', enabled: true },
+        ],
+    }));
+
+    popperInstance.update();
+}
+
+function hide() {
+    infoContent.removeAttribute('data-show');
+
+    popperInstance.setOptions((options) => ({
+        ...options,
+        modifiers: [
+            ...options.modifiers,
+            { name: 'eventListeners', enabled: false },
+        ],
+    }));
+}
+
+const showEvents = ['mouseenter', 'focus'];
+const hideEvents = ['mouseleave', 'blur'];
+
+showEvents.forEach((event) => {
+    infoRef.addEventListener(event, show);
+});
+
+hideEvents.forEach((event) => {
+    infoRef.addEventListener(event, hide);
+});
